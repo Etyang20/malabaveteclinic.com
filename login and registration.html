@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab || www.codinglabweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="styll.css" />
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form>
+          <input type="text" placeholder="Full name" name="fullname" id="fn" required />
+          <input type="text" placeholder="Phone Number" name="phonenumber" id="pn" required />
+          <input type="text" placeholder="Id Number" name="idnumber" id="in" required />
+          <input type="text" placeholder="Email address" name="email" id="email" required />
+          <input type="text" placeholder="Address" name="address" id="ad" required />
+          <input type="password" placeholder="Password" name="password" id="ps" required />
+          <input type="password" placeholder="Confirm password" name="confpass" id="pss" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" onclick="register()" value="Submit"/>
+        </form>
+      </div>
+
+      <div class="form login">
+        <header>Login</header>
+        <form>
+          <input type="text" placeholder="Email address" name="email" required />
+          <input type="password" placeholder="Password" name="password" required />
+          <a href="#">Forgot password?</a>
+          <a href="portal.html" class="hero-btn">Login</a>
+        </form>
+      </div>
+
+      <script>
+        const wrapper = document.querySelector(".wrapper"),
+          signupHeader = document.querySelector(".signup header"),
+          loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+          wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+          wrapper.classList.remove("active");
+        });
+        var emailArray=[];
+        var passwordArray=[];
+        function register(){
+            event.preventDefault();
+
+            var fullname= document.getElementById("fn").value;
+            var phonenumber = document.getElementById("pn").value;
+            var idnumber= document.getElementById("in").value;
+            var email = document.getElementById("email").value;
+            var address= document.getElementById("ad").value;
+            var password = document.getElementById("ps").value;
+            var confpass= document.getElementById("pss").value;
+
+            if (email == ""){
+                alert("Email required.");
+                return ;
+            }
+            else if (phonenumber == ""){
+                alert("phonenumber required.");
+                return ;
+            }
+            else if (idnumber == ""){
+                alert("idnumber required.");
+                return ;
+            }
+            else if (address == ""){
+                alert("address required.");
+                return ;
+            }
+            else if (password == ""){
+                alert("Password required.");
+                return ;
+            }
+            else if (confpass == ""){
+                alert("Password required.");
+                return ;
+            }
+            else if ( password != confpass ){
+                alert("Password don't match retype your Password.");
+                return;
+            }
+            else if(emailArray.indexOf(email) == -1){
+                emailArray.push(email);
+                passwordArray.push(password);
+
+                alert(email + "  Thanks for registration. \Go to the login page to continue");
+
+                document.getElementById("fn").value ="";
+                document.getElementById("pn").value="";
+                document.getElementById("in").value="";
+                document.getElementById("email").value="";
+                document.getElementById("ad").value="";
+                document.getElementById("ps").value="";
+                document.getElementById("pss").value="";
+            }
+            else{
+                alert(email + " is already register.");
+                return ;
+            }
+        }
+        function login(){
+            event.preventDefault();
+
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("ps").value;
+
+            var i = emailArray.indexOf(email);
+
+            if(emailArray.indexOf(email) == -1){
+                if (email == ""){
+                    alert("Email required.");
+                    return ;
+                }
+                alert("Email does not exist.");
+                return ;
+            }
+            else if(passwordArray[i] != password){
+                if (password == ""){
+                    alert("Password required.");
+                    return ;
+                }
+                alert("Password does not match.");
+                return ;
+            }
+            else {
+                alert(email + " yor are login Now \n welcome to our website.");
+
+                document.getElementById("email").value ="";
+                document.getElementById("ps").value="";
+                return ;
+            }
+
+        }
+        function forgot(){
+            event.preventDefault();
+
+            var email = document.getElementById("email").value;
+
+            if(emailArray.indexOf(email) == -1){
+                if (email == ""){
+                    alert("Email required.");
+                    return ;
+                }
+                alert("Email does not exist.");
+                return ;
+            }
+
+            alert("email is send to your email check it in 24hr. \n Thanks");
+            document.getElementById("email").value ="";
+        }
+      </script>
+    </section>
+  </body>
+</html>

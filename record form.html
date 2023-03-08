@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form in HTML CSS</title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="styl.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form action="contact.php" method="post" class="form">
+        <div class="input-box">
+          <label>Pets Name</label>
+          <input type="text" placeholder="Enter full name" class="form-control" id="petsname" name="petsname" required />
+        </div>
+
+        <div class="input-box">
+          <label>Age</label>
+          <input type="text" placeholder="Age" class="form-control" id="age" name="age" required />
+        </div>
+        <div class="input-box">
+          <label>Color</label>
+          <input type="text" placeholder="color" class="form-control" id="color" name="color" required />
+        </div>
+        <div class="input-box">
+          <label>Owners Name</label>
+          <input type="text" placeholder="Owners name" class="form-control" id="ownersname" name="ownersname" required />
+        </div>
+        <div class="input-box">
+          <label>Owners Email Address</label>
+          <input type="text" placeholder="Enter email address" class="form-control" id="email" name="email" required />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Owners Phone Number</label>
+            <input type="number" placeholder="Enter phone number" class="form-control" id="phonenumber" name="phonenumber" required />
+          </div>
+          <div class="input-box">
+            <label>Date of Birth of the Pet</label>
+            <input type="date" placeholder="Enter birth date" class="form-control" id="date" name="date" required />
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Gender</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" value="m" />
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" value="f"/>
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" value="o" />
+              <label for="check-other">prefer not to say</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Address</label>
+          <input type="text" placeholder="Enter street address" class="form-control" id="ad1" required />
+          <input type="text" placeholder="Enter street address line 2" class="form-control" id="ad2" required />
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>County</option>
+                <option>Busia</option>
+                <option>Bungoma</option>
+                <option>Kakamega</option>
+                <option>Vihiga</option>
+                <option>Uasin Gishu</option>
+                <option>Nakuru</option>
+                <option>Nairobi</option>
+                <option>Kiambu</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Enter your city" name="city" required />
+          </div>
+          <div class="column">
+            <input type="text" placeholder="Enter your region" class="form-control" name="region" id="region" required />
+            <input type="number" placeholder="Enter postal code" class="form-control"    name="code" id="code" required />
+          </div>
+        </div>
+        <input type="submit" onclick="register()" value="Submit"/>
+      </form>
+    </section>
+    <script>
+ var emailArray=[];
+        var passwordArray=[];
+        function register(){
+            event.preventDefault();
+
+            var petsname= document.getElementById("petsname").value;
+            var age = document.getElementById("age").value;
+            var color= document.getElementById("color").value;
+            var ownersname = document.getElementById("ownersname").value;
+            var email= document.getElementById("email").value;
+            var phonenumber = document.getElementById("phonenumber").value;
+            var date= document.getElementById("date").value;
+            var ad1= document.getElementById("ad1").value;
+            var ad2= document.getElementById("ad2").value;
+            var region= document.getElementById("region").value;
+            var code= document.getElementById("code").value;
+
+            if (email == ""){
+                alert("Email required.");
+                return ;
+            }
+            else if (petsname == ""){
+                alert("petsname required.");
+                return ;
+            }
+            else if (age == ""){
+                alert("age required.");
+                return ;
+            }
+            else if (color == ""){
+                alert("color required.");
+                return ;
+            }
+            else if (ownersname == ""){
+                alert("owners name required.");
+                return ;
+            }
+            else if (email == ""){
+                alert("email required.");
+                return ;
+            }
+            else if (phonenumber == ""){
+                alert("phone number required.");
+                return ;
+            }
+            else if (date == ""){
+                alert("date required.");
+                return ;
+            }
+            else if (ad1 == ""){
+                alert("address required.");
+                return ;
+            }
+            else if (ad2== ""){
+                alert("address required.");
+                return ;
+            }
+            else if (region == ""){
+                alert("region required.");
+                return ;
+            }
+            else if (code == ""){
+                alert("code required.");
+                return ;
+            }
+           
+            else if(emailArray.indexOf(email) == -1){
+                emailArray.push(email);
+                alert(ownersname + "  THANK YOU FOR REGISTERING WITH MALABA VETERINARY CLINIC\n WE ARE COMMITTED TO SERVE YOU WITH INTEGRITY");
+
+                document.getElementById("petsname").value ="";
+                document.getElementById("age").value="";
+                document.getElementById("color").value="";
+                document.getElementById("ownername").value="";
+                document.getElementById("email").value="";
+                document.getElementById("phonenumber").value="";
+                document.getElementById("date").value="";
+                document.getElementById("ad1").value="";
+                document.getElementById("ad2").value="";
+                document.getElementById("region").value="";
+                document.getElementById("code").value="";
+            }
+            else{
+                alert(email + " is already register.");
+                return ;
+            }
+        }
+        
+    </script>
+  </body>
+</html>

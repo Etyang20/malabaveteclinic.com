@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint" content="with=device-width, initial-scale=1.0">
+        <title>MALABA VETERINARY CLINIC</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/abee5816a3.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Us</title>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous"
+        />
+        <script src="index.js"></script>
+        <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      ></script>
+      <script type="text/javascript">
+        (function () {
+          emailjs.init("uiDEchk4Fe9-ELeu1");
+        })();
+      </script>
+    </head>
+    <body>
+        <section class="sub-header">
+            <nav>
+                <a href="index.html"><img src="images/logo.jpg"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="About.html">ABOUT</a></li>
+                        <li><a href="Services.html">SERVICES</a></li>
+                        <li><a href="Contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <h1>Contact Us</h1>
+
+        </section>
+        <!----------Contact us------>
+        <section class="location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.29264833407!2d34.
+            276726350000004!3d0.6351650000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177f6e3
+            c7a673355%3A0x14a8ad3ffb866998!2sMalaba!5e0!3m2!1sen!2ske!4v1673855725416!5m2!1sen!2ske"
+             width="600" height="450" style="border:0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section class="contact-us">
+            <div class="row">
+                <div class="contact-col">
+                    <div>
+                        <i class="fa fa-home"></i>
+                        <span>
+                            <h5>Malaba border</h5>
+                            <p>Along Malaba Uganda Road, opposite KCB Bank near Naivas supermarket</p>
+                        </span>
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <span>
+                            <h5>+254746947187</h5>
+                            <p>Monday to Saturday, 8AM to 5PM</p>
+                        </span>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <span>
+                            <h5>malabavetclinic@gmail.com</h5>
+                            <p>Email Us on Your Querry</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="container border mt-3 bg-light">
+                    <div class="row">
+                      <div class="col-md-6 p-5 bg-primary text-white">
+                        <h1>Hi there!</h1>
+                        <h4>
+                          Contact Malaba Veterinary Clinic to get more information
+                        </h4>
+                      </div>
+                      <div class="col-md-6 border-left py-3">
+                        <h1>Contact form</h1>
+                        <div class="form-group">
+                          <h5 for="name">Name</h5>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Enter name"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <h5 for="email">Email</h5>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="Enter email"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <h5 for="subject">Subject</h5>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="subject"
+                            placeholder="Enter subject"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <h5 for="message">Message</h5>
+                          <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button class="btn btn-primary" onclick="sendMail()">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            
+        </section>
+        <!-----footer------->
+        <section class="footer">
+            <h4>About Us</h4>
+            <p>We are located at malaba town just opposite KCB bank alongside naivas supermarket</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+                <i class="fa fa-telegram"></i>
+            </div>
+            <p>Made by Isaac Etyang MKU<i class="fa fa-heart-o"></i> student Thika main campus</p>
+
+        </section>
+    </body>
+    
+</html>
